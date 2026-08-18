@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+*.env
+.git/
+.gitignore
+.github/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+*.log
+*.sqlite3
+# Don't include model.pkl in Docker image — it's mounted via ConfigMap
+# or trained as part of the container startup in future phases
+# ml/model.pkl

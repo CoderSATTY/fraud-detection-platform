@@ -1,0 +1,32 @@
+replicaCount: 2
+
+image:
+  repository: fraud-api
+  tag: "xgb-v1"
+  pullPolicy: IfNotPresent
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 60
+
+ingress:
+  enabled: true
+  className: "nginx"
+  host: fraud-api.local
+
+env:
+  REVIEW_THRESHOLD: "0.60"
+  BLOCK_THRESHOLD: "0.90"
+  KAFKA_ENABLED: "false"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+  KAFKA_TOPIC: "fraud-transactions"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi

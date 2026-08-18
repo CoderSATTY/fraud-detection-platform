@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fraud-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/YOUR_USERNAME/fraud-detection-platform.git' # TODO: Update this
+    targetRevision: HEAD
+    path: helm/fraud-api
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: ml-platform
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

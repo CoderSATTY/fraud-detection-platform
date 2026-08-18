@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fraud-api-config
+data:
+  REVIEW_THRESHOLD: {{ .Values.env.REVIEW_THRESHOLD | quote }}
+  BLOCK_THRESHOLD: {{ .Values.env.BLOCK_THRESHOLD | quote }}
+  KAFKA_ENABLED: {{ .Values.env.KAFKA_ENABLED | quote }}
+  KAFKA_BOOTSTRAP_SERVERS: {{ .Values.env.KAFKA_BOOTSTRAP_SERVERS | quote }}
+  KAFKA_TOPIC: {{ .Values.env.KAFKA_TOPIC | quote }}
