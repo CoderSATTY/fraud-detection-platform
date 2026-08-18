@@ -3,12 +3,12 @@ pipeline {
 
     environment {
         REGISTRY      = "ghcr.io"
-        GHCR_USER     = "YOUR_GITHUB_USERNAME"
-        IMAGE_NAME    = "ml-ticket-prioritizer"
+        GHCR_USER     = "CoderSATTY"
+        IMAGE_NAME    = "fraud-api"
         IMAGE_FULL    = "${REGISTRY}/${GHCR_USER}/${IMAGE_NAME}"
-        GITOPS_REPO   = "https://github.com/${GHCR_USER}/ml-ticket-prioritizer-gitops.git"
-        GITOPS_VALUES = "helm/ml-api/values.yaml"
-        IMAGE_TAG     = "v${BUILD_NUMBER}-${sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()}"
+        GITOPS_REPO   = "https://github.com/${GHCR_USER}/fraud-detection-platform.git"
+        GITOPS_VALUES = "helm/fraud-api/values.yaml"
+        IMAGE_TAG     = "xgb-v${BUILD_NUMBER}-${sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()}"
     }
 
     options {
