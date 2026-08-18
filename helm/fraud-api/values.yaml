@@ -19,7 +19,7 @@ ingress:
 env:
   REVIEW_THRESHOLD: "0.60"
   BLOCK_THRESHOLD: "0.90"
-  KAFKA_ENABLED: "false"
+  KAFKA_ENABLED: "true"
   KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
   KAFKA_TOPIC: "fraud-transactions"
 
