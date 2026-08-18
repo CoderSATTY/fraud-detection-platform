@@ -12,3 +12,5 @@ ml/model.pkl
 ml/model_meta.json
 .pytest_cache/
 .mypy_cache/
+ARCHITECTURE.md
+RUN_GUIDE.md
